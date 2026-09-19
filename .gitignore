@@ -12,6 +12,7 @@ Desktop.ini
 *.tmp
 *.bak
 *.swp
+__pycache__/
 
 .env
 .env.*
