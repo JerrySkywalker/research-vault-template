@@ -1,0 +1,39 @@
+# Research Vault Template
+
+A public, Git-native research knowledge vault that is compatible with Obsidian, aware of Zotero ownership, and designed for careful human-and-agent collaboration.
+
+## Model
+
+The vault holds cross-project knowledge. Each design-lab repository holds its own executable research state and evidence. Zotero owns bibliographic records and managed attachments. Durable large assets live in `ResearchLibrary`; high-churn execution belongs in a local work area and rebuildable output belongs in a cache. These locations are roles, not a synchronization system.
+
+Use logical durable-asset references rather than machine paths:
+
+```yaml
+asset_ref: projects/<project>/<artifact>
+```
+
+## Directory roles
+
+- `inbox/` — provisional, bounded capture.
+- `concepts/`, `literature/`, `methods/` — canonical cross-project understanding.
+- `projects/` — portals and summaries, not duplicated project evidence.
+- `maps/` — human and agent navigation maps.
+- `templates/` and `bibliography/` — reusable note material and bibliographic-facing Markdown.
+
+## Working with agents
+
+Capture authorized material in `inbox/`, promote it deliberately, and make canonical refactors reviewable Git changes. Keep project code, experiment registers, run histories, and adopted designs in their canonical design-lab repository. Keep Zotero databases, attachment trees, and durable binary assets out of this repository.
+
+## Quick start
+
+1. Create a private repository from this template.
+2. Open the clone as an Obsidian vault; only stable baseline settings are tracked.
+3. Create a project portal that links to its executable design-lab repository.
+4. Record durable assets with logical `asset_ref` values and provenance, not absolute paths.
+5. Commit reviewable knowledge changes.
+
+## Template evolution
+
+Generated repositories are independent. Template improvements are versioned at a milestone, reviewed for applicability, then brought into an actual repository through an explicit branch or PR. There is no automatic sync, submodule, subtree, or template remote.
+
+Machine locations may be useful local examples, but are never canonical identities.
