@@ -23,7 +23,13 @@ TEMPLATES = {
     "inbox-capture.md": ("type", "status", "tags", "projects", "captured"),
 }
 FORBIDDEN_OBSIDIAN = (".obsidian/workspace.json", ".obsidian/workspace-mobile.json", ".obsidian/graph.json")
-SECRET_MARKERS = ("-----BEGIN PRIVATE KEY-----", "AKIA[0-9A-Z]{16}", "ghp_[A-Za-z0-9]{36}", "sk-[A-Za-z0-9]{20}")
+ABSOLUTE_USER_PATH = re.compile(r"(?i)(?:[a-z]:[\\/]users[\\/][^\\/\s]+[\\/]|/(?:home|users)/[^/\s]+/)")
+SECRET_MARKERS = (
+    r"-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----",
+    r"\bAKIA[0-9A-Z]{16}\b",
+    r"\bghp_[A-Za-z0-9]{36}\b",
+    r"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b",
+)
 
 
 def fail(message: str) -> None:
@@ -66,7 +72,7 @@ def main() -> None:
         if Path(path).suffix.lower() not in {".md", ".txt", ".json", ".yaml", ".yml", ".toml"} and Path(path).name not in {".gitignore", ".gitattributes", "AGENTS.md", "README.md"}:
             continue
         text = (ROOT / path).read_text(encoding="utf-8")
-        if re.search(r"(?i)[a-z]:[\\/]users[\\/]", text):
+        if ABSOLUTE_USER_PATH.search(text):
             fail(f"obvious absolute user path in: {path}")
         for marker in SECRET_MARKERS:
             if re.search(marker, text):
