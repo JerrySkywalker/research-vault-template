@@ -8,6 +8,17 @@ This vault owns cross-project canonical concepts, literature understanding, cros
 
 A design-lab repository is canonical for its executable research state. Vault project notes are portals and synthesized knowledge only. Never duplicate a project's complete experiment register, decision log, verification state, run history, or code tree here.
 
+## Routing a note
+
+Use the smallest canonical home that answers the question:
+
+- `inbox/` for authorized, bounded, unreviewed capture.
+- `concepts/`, `literature/`, or `methods/` for cross-project knowledge that has been reviewed and synthesized.
+- `projects/` for a portal or summary that links outward to the project repository.
+- the project repository for executable state, experiments, decisions, code, or run evidence.
+
+Before creating a canonical note, search its home and links for the same subject, citekey, DOI, method, or project. Update the existing note when it is the same enduring subject; create a new note only when it has a distinct scope. See [the promotion workflow](docs/PROMOTION_WORKFLOW.md) and the [templates](templates/).
+
 ## Zotero and durable assets
 
 Zotero is authoritative for bibliographic records and managed attachments. Vault notes may contain a citekey, Zotero item key, DOI, URL, annotations, interpretation, and links; never copy Zotero databases or storage.
@@ -24,6 +35,8 @@ Never use a machine path as canonical asset identity, and never create a symlink
 
 Direct Markdown edits are allowed only within the admitted mutation scope. Web ChatGPT may add bounded capture directly when authorized; canonical knowledge refactors require a branch/PR or another explicitly reviewable Git change. Local Codex keeps all edits reviewable. No agent may silently bulk-rewrite canonical knowledge.
 
+An agent may commit directly only when its admitted scope explicitly permits it; otherwise prepare a review branch. Treat Zotero metadata and OneDrive assets as references, not content to import. The workflow states the create-versus-update and review rules precisely.
+
 Git is authoritative for knowledge history. Do not rewrite Git history merely to reorganize notes.
 
 ## Obsidian and minimalism
@@ -31,3 +44,5 @@ Git is authoritative for knowledge history. Do not rewrite Git history merely to
 Track only stable baseline Obsidian configuration. Ignore workspace state, community plugins, plugin data, and other machine-specific state.
 
 Do not add services, databases, asset registries, MCP layers, or custom CLIs unless a later concrete requirement establishes necessity.
+
+See [Obsidian conventions](docs/OBSIDIAN.md) and [template specialization](docs/SPECIALIZATION.md) before changing tracked configuration or creating an instance.
