@@ -45,4 +45,4 @@ Track only stable baseline Obsidian configuration. Ignore workspace state, commu
 
 Do not add services, databases, asset registries, MCP layers, or custom CLIs unless a later concrete requirement establishes necessity.
 
-See [Obsidian conventions](docs/OBSIDIAN.md) and [template specialization](docs/SPECIALIZATION.md) before changing tracked configuration or creating an instance.
+See [Obsidian conventions](docs/OBSIDIAN.md), [template specialization](docs/SPECIALIZATION.md), and [safe instance upgrades](docs/UPGRADE.md) before changing tracked configuration or creating an instance. A specialized instance reviews template evolution semantically on a branch; it never lets a template update overwrite its knowledge, identity, governance, or local configuration.
