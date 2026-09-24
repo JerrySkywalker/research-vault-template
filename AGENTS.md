@@ -15,9 +15,12 @@ Use the smallest canonical home that answers the question:
 - `inbox/` for authorized, bounded, unreviewed capture.
 - `concepts/`, `literature/`, or `methods/` for cross-project knowledge that has been reviewed and synthesized.
 - `projects/` for a portal or summary that links outward to the project repository.
+- `terminology/` for reviewed cross-project bilingual canonical terms; a Lab owns its project-local terms.
 - the project repository for executable state, experiments, decisions, code, or run evidence.
 
 Before creating a canonical note, search its home and links for the same subject, citekey, DOI, method, or project. Update the existing note when it is the same enduring subject; create a new note only when it has a distinct scope. See [the promotion workflow](docs/PROMOTION_WORKFLOW.md) and the [templates](templates/).
+
+Use [canonical terminology guidance](docs/TERMINOLOGY.md) for bilingual wording, provenance, deprecation, and explicit Lab-to-Vault promotion. A project reference does not automatically promote or synchronize a term.
 
 ## Zotero and durable assets
 

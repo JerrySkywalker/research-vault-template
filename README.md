@@ -17,6 +17,7 @@ asset_ref: projects/<project>/<artifact>
 - `inbox/` — provisional, bounded capture.
 - `concepts/`, `literature/`, `methods/` — canonical cross-project understanding.
 - `projects/` — portals and summaries, not duplicated project evidence.
+- `terminology/` — reviewed cross-project bilingual canonical terms, not project-local vocabulary.
 - `maps/` — human and agent navigation maps.
 - `templates/` and `bibliography/` — reusable note material and bibliographic-facing Markdown.
 
@@ -25,6 +26,8 @@ asset_ref: projects/<project>/<artifact>
 Copy the smallest matching file from `templates/`, give it a clear descriptive filename, and replace only the relevant placeholders. The templates use a small shared vocabulary (`type`, `status`, `tags`, `projects`) so people and agents can navigate them without a universal ontology. Bibliographic notes retain Zotero-native identifiers; asset references remain logical.
 
 See the [promotion workflow](docs/PROMOTION_WORKFLOW.md) before promoting capture to canonical knowledge, and the [Obsidian conventions](docs/OBSIDIAN.md) before changing vault settings.
+
+For cross-project wording, use the [canonical terminology guide](docs/TERMINOLOGY.md) and its [single-note form](templates/term.md). The public template has no real domain term corpus.
 
 ## Working with agents
 

@@ -14,6 +14,7 @@ During review, search the relevant canonical directory and linked notes by subje
 - `literature/`: interpretation of a source, retaining its Zotero-native identifiers.
 - `methods/`: reusable methods, assumptions, and limitations.
 - `projects/`: a portal or synthesis that points to the project's canonical repository.
+- `terminology/`: reviewed cross-project bilingual wording and definitions. See [terminology](TERMINOLOGY.md) for explicit project-local promotion, origin provenance, and historical revision references.
 
 Project code, experiment registers, run histories, raw results, adopted architecture, and verification evidence remain in the project repository. A vault portal may summarize or link to them, but does not mirror them.
 
