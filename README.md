@@ -44,7 +44,7 @@ Generated repositories are independent. Template improvements are versioned at a
 
 Machine locations may be useful local examples, but are never canonical identities.
 
-When creating an instance, replace the template name, description, and any example remotes with the instance identity, then create `TEMPLATE_BASELINE.md` from the documented contract. Keep general operating guidance that remains true for the instance; do not retain template branding as a second identity. Details: [specializing this template](docs/SPECIALIZATION.md).
+When creating an instance, replace the template name, description, and any example remotes with the instance identity, then create the concise `TEMPLATE_BASELINE.md` and cumulative `TEMPLATE_UPGRADES.md` described by the lifecycle contract. Keep general operating guidance that remains true for the instance; do not retain template branding as a second identity. Details: [specializing this template](docs/SPECIALIZATION.md) and [reviewing a safe upgrade](docs/UPGRADE.md).
 
 ## Validation
 

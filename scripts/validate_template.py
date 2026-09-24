@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = (
     "AGENTS.md", "README.md", ".gitignore", ".gitattributes",
     ".obsidian/app.json", ".obsidian/appearance.json", ".obsidian/core-plugins.json",
-    "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md",
+    "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md", "docs/UPGRADE.md",
+    "tests/fixtures/v0.2-instance-lifecycle.md",
 )
 REQUIRED_DIRS = ("inbox", "concepts", "literature", "methods", "projects", "maps", "templates", "bibliography")
 TEMPLATES = {
@@ -29,6 +30,11 @@ SECRET_MARKERS = (
     r"\bAKIA[0-9A-Z]{16}\b",
     r"\bghp_[A-Za-z0-9]{36}\b",
     r"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b",
+)
+LIFECYCLE_TERMS = (
+    "TEMPLATE_OWNED", "INSTANCE_OWNED", "INSTANCE_SPECIALIZED", "BOOTSTRAP_ONLY",
+    "PORT", "ADAPT", "SKIP", "ALREADY_PRESENT",
+    "Generated from", "Last reviewed", "Reconciled through",
 )
 
 
@@ -49,6 +55,21 @@ def main() -> None:
     for path in REQUIRED_DIRS:
         if not (ROOT / path).is_dir():
             fail(f"missing required directory: {path}")
+
+    upgrade = (ROOT / "docs/UPGRADE.md").read_text(encoding="utf-8")
+    specialization = (ROOT / "docs/SPECIALIZATION.md").read_text(encoding="utf-8")
+    fixture = (ROOT / "tests/fixtures/v0.2-instance-lifecycle.md").read_text(encoding="utf-8")
+    for term in LIFECYCLE_TERMS:
+        if term not in upgrade:
+            fail(f"upgrade contract missing lifecycle term: {term}")
+    for term in ("TEMPLATE_BASELINE.md", "TEMPLATE_UPGRADES.md", "per-file ownership metadata"):
+        if term not in specialization:
+            fail(f"specialization contract missing lifecycle boundary: {term}")
+    for term in ("69837fd75c779bf9aa7415f7d087ffbc0fd54394", "OS-local temporary directory", "Formal execution"):
+        if term not in fixture:
+            fail(f"synthetic scenario definition is incomplete: {term}")
+    if "JSON/YAML" not in upgrade:
+        fail("upgrade contract does not prohibit a machine-readable upgrade manifest")
 
     tracked = tracked_files()
     for path in FORBIDDEN_OBSIDIAN:
