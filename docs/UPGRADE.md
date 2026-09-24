@@ -67,6 +67,7 @@ Keep `TEMPLATE_BASELINE.md` small. Put review history in cumulative `TEMPLATE_UP
 
 - `templates/` blank note forms, generic docs, and `scripts/validate_template.py` are reusable template contract. Port additions or adapt local extensions without treating an instance validator as a migration tool.
 - Existing notes in `inbox/`, `concepts/`, `literature/`, `methods/`, `projects/`, `maps/`, and `bibliography/` are instance-owned. Never overwrite, delete, or normalize them just because a form or template convention changed.
+- Existing `terminology/` term notes are instance-owned. The blank term form and generic terminology guidance are template-owned review candidates; do not overwrite populated terms or silently change their preferred wording.
 - Root README and AGENTS require specialization-aware review. Preserve instance identity and local authority; do not restore template title, quick-start, or broaden governance implicitly.
 - `.obsidian/app.json`, `.obsidian/appearance.json`, and `.obsidian/core-plugins.json` are specialized configuration after use. Review a changed default as a suggestion; do not silently replace a legitimate local choice.
 - `.gitignore` and `.gitattributes` are specialized safety/portability rules. Merge new generic intent semantically while preserving local exclusions and attributes.

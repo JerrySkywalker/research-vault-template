@@ -13,6 +13,7 @@ REQUIRED_FILES = (
     "AGENTS.md", "README.md", ".gitignore", ".gitattributes",
     ".obsidian/app.json", ".obsidian/appearance.json", ".obsidian/core-plugins.json",
     "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md", "docs/UPGRADE.md",
+    "docs/TERMINOLOGY.md", "terminology/README.md", "templates/term.md",
     "tests/fixtures/v0.2-instance-lifecycle.md",
 )
 REQUIRED_DIRS = ("inbox", "concepts", "literature", "methods", "projects", "maps", "templates", "bibliography")
@@ -22,6 +23,7 @@ TEMPLATES = {
     "method.md": ("type", "status", "tags", "projects"),
     "project-portal.md": ("type", "status", "tags", "projects", "repository"),
     "inbox-capture.md": ("type", "status", "tags", "projects", "captured"),
+    "term.md": ("type", "status", "preferred_en", "preferred_zh", "abbreviations", "aliases_en", "aliases_zh"),
 }
 FORBIDDEN_OBSIDIAN = (".obsidian/workspace.json", ".obsidian/workspace-mobile.json", ".obsidian/graph.json")
 ABSOLUTE_USER_PATH = re.compile(r"(?i)(?:[a-z]:[\\/]users[\\/][^\\/\s]+[\\/]|/(?:home|users)/[^/\s]+/)")
@@ -88,6 +90,19 @@ def main() -> None:
         for field in fields:
             if not re.search(rf"^{re.escape(field)}:", front_matter, re.MULTILINE):
                 fail(f"template field missing: templates/{name} ({field})")
+
+    term = (ROOT / "templates/term.md").read_text(encoding="utf-8")
+    term_front = term.split("\n---\n", 1)[0]
+    if not re.search(r"^type: term$", term_front, re.MULTILINE):
+        fail("term form must identify type: term")
+    if not re.search(r"^status: active$", term_front, re.MULTILINE):
+        fail("term form must start active after review")
+    for field in ("abbreviations", "aliases_en", "aliases_zh"):
+        if not re.search(rf"^{field}: \[\]$", term_front, re.MULTILINE):
+            fail(f"term form must start with an empty {field} list")
+    for section in ("Definition", "Domain and usage", "Provenance and sources", "Wording guidance"):
+        if f"## {section}" not in term:
+            fail(f"term form missing section: {section}")
 
     for path in sorted(tracked):
         if Path(path).suffix.lower() not in {".md", ".txt", ".json", ".yaml", ".yml", ".toml"} and Path(path).name not in {".gitignore", ".gitattributes", "AGENTS.md", "README.md"}:
