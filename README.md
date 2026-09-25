@@ -29,6 +29,8 @@ Copy the smallest matching file from `templates/`, give it a clear descriptive f
 
 See the [promotion workflow](docs/PROMOTION_WORKFLOW.md) before promoting capture to canonical knowledge, and the [Obsidian conventions](docs/OBSIDIAN.md) before changing vault settings.
 
+See [external integration boundaries](docs/INTEGRATIONS.md) for bibliography identifiers, portable Markdown/Obsidian use, durable asset provenance, and provider-neutral agents.
+
 For cross-project wording, use the [canonical terminology guide](docs/TERMINOLOGY.md) and its [single-note form](templates/term.md). The public template has no real domain term corpus.
 
 ## Working with agents

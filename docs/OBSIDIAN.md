@@ -6,4 +6,6 @@ At template release these three files are reusable baseline defaults. Once a vau
 
 Community plugins are not installed or required. They may be documented later as optional integrations only when a concrete need exists.
 
+Markdown text, YAML front matter, descriptive paths, and links are the durable contract. Obsidian properties edit front matter, and native Bases can provide optional views; neither a Base nor a community plugin is needed to read or validate the notes. Keep a note intelligible from its text and recorded identifiers even when Obsidian is unavailable.
+
 Use descriptive, stable Markdown filenames in the appropriate directory; prefer clear titles and ordinary Obsidian links over numeric IDs. Keep attachments out of Git when they are Zotero-managed or large durable assets. Cite or link to Zotero using citekeys, item keys, DOI, or URL, and reference durable assets with logical `asset_ref` values. This avoids embedding OneDrive or Zotero content while preserving provenance and portability.
