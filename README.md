@@ -33,6 +33,8 @@ For cross-project wording, use the [canonical terminology guide](docs/TERMINOLOG
 
 Capture authorized material in `inbox/`, promote it deliberately, and make canonical refactors reviewable Git changes. Keep project code, experiment registers, run histories, and adopted designs in their canonical design-lab repository. Keep Zotero databases, attachment trees, and durable binary assets out of this repository.
 
+The [governance contract](docs/GOVERNANCE.md) defines `CAPTURE`, `ROUTINE_UPDATE`, and `CANONICAL_CHANGE`, the human review gate, evidence and decision boundaries, and ordinary Git handling for concurrent work.
+
 ## Quick start
 
 1. Create a private repository from this template.

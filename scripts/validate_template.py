@@ -13,7 +13,7 @@ REQUIRED_FILES = (
     "AGENTS.md", "README.md", ".gitignore", ".gitattributes",
     ".obsidian/app.json", ".obsidian/appearance.json", ".obsidian/core-plugins.json",
     "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md", "docs/UPGRADE.md",
-    "docs/TERMINOLOGY.md", "terminology/README.md", "templates/term.md",
+    "docs/TERMINOLOGY.md", "docs/GOVERNANCE.md", "terminology/README.md", "templates/term.md",
     "tests/fixtures/v0.2-instance-lifecycle.md",
 )
 REQUIRED_DIRS = ("inbox", "concepts", "literature", "methods", "projects", "maps", "templates", "bibliography")
@@ -72,6 +72,11 @@ def main() -> None:
             fail(f"synthetic scenario definition is incomplete: {term}")
     if "JSON/YAML" not in upgrade:
         fail("upgrade contract does not prohibit a machine-readable upgrade manifest")
+
+    governance = (ROOT / "docs/GOVERNANCE.md").read_text(encoding="utf-8")
+    for term in ("CAPTURE", "ROUTINE_UPDATE", "CANONICAL_CHANGE", "Generated output", "Evidence", "Interpretation", "Decision", "nested `AGENTS.md`"):
+        if term not in governance:
+            fail(f"governance contract missing: {term}")
 
     tracked = tracked_files()
     for path in FORBIDDEN_OBSIDIAN:
