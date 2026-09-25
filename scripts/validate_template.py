@@ -13,7 +13,7 @@ REQUIRED_FILES = (
     "AGENTS.md", "README.md", ".gitignore", ".gitattributes",
     ".obsidian/app.json", ".obsidian/appearance.json", ".obsidian/core-plugins.json",
     "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md", "docs/UPGRADE.md",
-    "docs/TERMINOLOGY.md", "docs/GOVERNANCE.md", "terminology/README.md", "templates/term.md",
+    "docs/TERMINOLOGY.md", "docs/GOVERNANCE.md", "docs/INTEGRATIONS.md", "terminology/README.md", "templates/term.md",
     "tests/fixtures/v0.2-instance-lifecycle.md",
 )
 REQUIRED_DIRS = ("inbox", "concepts", "literature", "methods", "projects", "maps", "templates", "bibliography")
