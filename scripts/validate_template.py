@@ -119,7 +119,7 @@ def main() -> None:
             if re.search(marker, text):
                 fail(f"possible secret material in: {path}")
 
-    ignored = (".obsidian/workspace.json", ".obsidian/plugins/example/data.json", ".env", "example.key")
+    ignored = (".obsidian/workspace.json", ".obsidian/plugins/example/data.json", ".env", "example.key", "generated/probe.txt", "cache/probe.txt", "work/probe.txt")
     for path in ignored:
         result = subprocess.run(["git", "check-ignore", "--quiet", path], cwd=ROOT)
         if result.returncode != 0:

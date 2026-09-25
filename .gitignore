@@ -13,6 +13,9 @@ Desktop.ini
 *.bak
 *.swp
 __pycache__/
+/generated/
+/cache/
+/work/
 
 .env
 .env.*
