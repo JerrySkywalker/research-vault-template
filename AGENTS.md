@@ -1,5 +1,7 @@
 # Research Vault Agent Contract
 
+Read [the governance contract](docs/GOVERNANCE.md) before changing research state. Classify each mutation as `CAPTURE`, `ROUTINE_UPDATE`, or `CANONICAL_CHANGE`; a commit or passing check never grants scientific authority. Human review is required for canonical meaning, evidence admission, and terminology. Nested `AGENTS.md` files may narrow these rules but cannot weaken them.
+
 ## Ownership and boundaries
 
 This vault owns cross-project canonical concepts, literature understanding, cross-project methods, knowledge maps, project portals and summaries, and bibliographic-facing Markdown. It does not own project executable state, project code, experiments, raw simulation results, adopted project architecture, the Zotero database or attachment tree, or large durable assets.
