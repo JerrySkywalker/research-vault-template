@@ -10,10 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = (
-    "AGENTS.md", "README.md", ".gitignore", ".gitattributes",
+    "AGENTS.md", "README.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", ".gitignore", ".gitattributes",
     ".obsidian/app.json", ".obsidian/appearance.json", ".obsidian/core-plugins.json",
     "docs/PROMOTION_WORKFLOW.md", "docs/SPECIALIZATION.md", "docs/OBSIDIAN.md", "docs/UPGRADE.md",
-    "docs/TERMINOLOGY.md", "docs/GOVERNANCE.md", "docs/INTEGRATIONS.md", "terminology/README.md", "templates/term.md",
+    "docs/TERMINOLOGY.md", "docs/GOVERNANCE.md", "docs/INTEGRATIONS.md", "docs/RELEASING.md", "terminology/README.md", "templates/term.md",
+    ".github/workflows/template-checks.yml",
     "tests/fixtures/v0.2-instance-lifecycle.md",
 )
 REQUIRED_DIRS = ("inbox", "concepts", "literature", "methods", "projects", "maps", "templates", "bibliography")
@@ -79,6 +80,9 @@ def main() -> None:
             fail(f"governance contract missing: {term}")
 
     tracked = tracked_files()
+    generated = sorted(path for path in tracked if path.startswith(("generated/", "cache/", "work/")))
+    if generated:
+        fail(f"generated/cache/work output is tracked: {', '.join(generated)}")
     for path in FORBIDDEN_OBSIDIAN:
         if path in tracked:
             fail(f"machine-specific Obsidian state is tracked: {path}")

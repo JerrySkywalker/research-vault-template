@@ -59,4 +59,6 @@ When creating an instance, replace the template name, description, and any examp
 
 Run `python scripts/validate_template.py` before proposing template changes. It uses only the Python standard library and Git to check the public repository shape and documented ignore boundaries; it does not inspect personal data or integrate with external services.
 
+Template source contributors should read [contributing guidance](CONTRIBUTING.md), the [changelog](CHANGELOG.md), and the [maintainer release procedure](docs/RELEASING.md). The source repository runs template checks on Windows and Linux; a generated instance may replace that source-only CI with its own checks.
+
 For a growing vault, keep each canonical note focused, use the documented directories, and keep generated indexes and caches outside Git. Validate a representative synthetic instance before changing layout or indexing conventions.
