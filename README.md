@@ -6,6 +6,8 @@ A public, Git-native research knowledge vault that is compatible with Obsidian, 
 
 The vault holds cross-project knowledge. Each design-lab repository holds its own executable research state and evidence. Zotero owns bibliographic records and managed attachments. Durable large assets live in `ResearchLibrary`; high-churn execution belongs in a local work area and rebuildable output belongs in a cache. These locations are roles, not a synchronization system.
 
+The portable roles are **source** (reviewable Git notes and template files), **work/build** (disposable processing), **cache** (rebuildable data), **artifact** (retained run evidence and receipts), and **durable asset** (large material kept outside Git). A host chooses its own directories for the latter four roles. Repository-local `generated/`, `cache/`, and `work/` are ignored safety boundaries, not canonical homes. Commit only deliberately reviewed compact evidence and references with provenance; a validator result does not admit scientific evidence.
+
 Use logical durable-asset references rather than machine paths:
 
 ```yaml
@@ -54,3 +56,5 @@ When creating an instance, replace the template name, description, and any examp
 ## Validation
 
 Run `python scripts/validate_template.py` before proposing template changes. It uses only the Python standard library and Git to check the public repository shape and documented ignore boundaries; it does not inspect personal data or integrate with external services.
+
+For a growing vault, keep each canonical note focused, use the documented directories, and keep generated indexes and caches outside Git. Validate a representative synthetic instance before changing layout or indexing conventions.
