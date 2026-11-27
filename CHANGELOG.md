@@ -2,6 +2,11 @@
 
 This file records public template changes. An instance has its own history and does not inherit a later template release automatically.
 
+## v1.1.0
+
+- Added optional mathematical concept, method, and literature guidance with a synthetic note that links to a formal declaration at an exact source revision.
+- Retained the existing note forms and validation workflow. Lean and Mathlib are optional.
+
 ## v1.0.0
 
 - First stable Research Template Pair contract. Carries the qualified v0.9 RC research model without a new feature or schema change.

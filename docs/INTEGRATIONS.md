@@ -8,6 +8,10 @@ Zotero owns managed bibliographic records and attachments. A Vault literature no
 
 No Zotero plugin is required. If a specialized instance uses another bibliography manager, preserve the separation between managed source records/attachments and the Vault's interpretation, and keep a usable DOI, URL, or source locator. Do not silently relabel a different provider's ID as a Zotero item key.
 
+## Formal mathematics
+
+Use the [mathematical knowledge guide](MATHEMATICS.md) for optional references to exact formal declarations and evidence held in other repositories. A note remains usable when those repositories are unavailable.
+
 ## Obsidian and Markdown
 
 The tracked `.obsidian` files are portable defaults. Markdown headings, front matter, ordinary relative links, and descriptive note paths carry the durable content. Obsidian properties are a user interface to front matter; native Bases may be useful views, but no Base, community plugin, or plugin data is required to read or validate the Vault. Wiki links are convenient navigation and should retain enough descriptive context to be understood as Markdown. Zotero attachments and large assets stay outside Git; a note references them by managed identity or logical `asset_ref`.
