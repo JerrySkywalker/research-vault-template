@@ -33,6 +33,8 @@ See [external integration boundaries](docs/INTEGRATIONS.md) for bibliography ide
 
 For cross-project wording, use the [canonical terminology guide](docs/TERMINOLOGY.md) and its [single-note form](templates/term.md). The public template has no real domain term corpus.
 
+For mathematics, use the optional [mathematical knowledge guide](docs/MATHEMATICS.md) and its synthetic worked note. Keep reusable explanations and exact references in the Vault. A Design Lab or external library holds the proof source. Lean and Mathlib are optional for the Vault, including for validation.
+
 ## Working with agents
 
 Capture authorized material in `inbox/`, promote it deliberately, and make canonical refactors reviewable Git changes. Keep project code, experiment registers, run histories, and adopted designs in their canonical design-lab repository. Keep Zotero databases, attachment trees, and durable binary assets out of this repository.
@@ -52,6 +54,8 @@ The [governance contract](docs/GOVERNANCE.md) defines `CAPTURE`, `ROUTINE_UPDATE
 Generated repositories are independent. Template improvements are versioned at a milestone, reviewed for applicability, then brought into an actual repository through an explicit branch or PR. There is no automatic sync, submodule, subtree, or template remote.
 
 Machine locations may be useful local examples, but are never canonical identities.
+
+See the [ResearchFabric compatibility set](https://github.com/JerrySkywalker/ResearchFabric/blob/main/compatibility/release-set.example.yaml) for the current released template pair.
 
 When creating an instance, replace the template name, description, and any example remotes with the instance identity, then create the concise `TEMPLATE_BASELINE.md` and cumulative `TEMPLATE_UPGRADES.md` described by the lifecycle contract. Keep general operating guidance that remains true for the instance; do not retain template branding as a second identity. Details: [specializing this template](docs/SPECIALIZATION.md) and [reviewing a safe upgrade](docs/UPGRADE.md).
 
